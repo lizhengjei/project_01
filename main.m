@@ -63,8 +63,6 @@ R=(floor(112/256*N)+M)/N;
 S=N*R; %信息位码长,包括奇偶校验
 % M=5;%奇偶校验位
 % m=55;%较不可靠信息比特
- 
-
 
 Se=S-M;%真正信息位
 m=floor(0.42*Se);%包含SCL的信息位和奇偶校验位
@@ -88,8 +86,7 @@ for i=1:IE
  pe=1/2*erfc(sqrt(g)/2);
 %  [G_in_order,index] = sort(g,'descend');%将高斯子信道错误概率按从大到小排列，选取大的做信息位
  [~,index]=sort(pe);%从小到大
-% [pw]=PW(N);
-%  [pw_in_order,index] = sort( pw,'descend' );%将PW按从大到小排列，选取大的做信息位
+
 % p_start=p(1);
 % p_end=p(Se);
 % p_middle=(p_start+p_end)/2;
