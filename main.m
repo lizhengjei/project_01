@@ -87,15 +87,6 @@ for i=1:IE
 %  [G_in_order,index] = sort(g,'descend');%将高斯子信道错误概率按从大到小排列，选取大的做信息位
  [~,index]=sort(pe);%从小到大
 
-% p_start=p(1);
-% p_end=p(Se);
-% p_middle=(p_start+p_end)/2;
-% m=0;
-% for k=1:Se
-%     if p(k)>p_middle
-%         m=m+1;
-%     end
-% end
  signal_index =  sort(index( 1:S )) ;   %前S位作为信息位
  frozen_index =sort( index( S+1:end ));   %后面的作为冻结位
 %  index1 = sort(index(S-m+1:S));
@@ -112,21 +103,7 @@ u_frozen_index(M)=u_signal_index(end);%最后一位校验比特在最后一个,1
 u_frozen_index=sort(u_frozen_index);
 u_signal_index=u_signal_index(1:end-1);%信息比特除去最后一个校验比特，较不可靠信息位
 u_info_index=setdiff(signal_index,u_frozen_index);%setdiff表示从A数组中去除B数组所剩的数，其中B数组包含于A数组
-% v=0;
-%  s=0;
-% for vv=1:r
-%     if u_frozen_index(vv)<u_signal_index(1)
-%         v=v+1;
-%     end
-% end
-% u_frozen_index=u_frozen_index(v+1:end);
-% M=length(u_frozen_index);%校验比特数
-% for vv=1:m
-%       if u_signal_index(vv)>u_frozen_index(end)
-%          s=s+1;
-%       end
-% end
-%   u_signal_index=u_signal_index(1:m-s);
+
   u_x=sort([u_signal_index u_frozen_index]);%较不可靠信息位和校验位结合形成外码块
   for vv=1:length(u_frozen_index)
   u_x_frozen_index(vv)=find(u_x==u_frozen_index(vv));%校验比特在外码码字中的序号
