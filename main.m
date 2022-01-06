@@ -122,15 +122,7 @@ for jj=1:length(frozen_index)
     end
     
 end
-% 在u_x之间的冻结比特
-% for jj=1:length(frozen_index)
-%     for ii=1:M
-%         if frozen_index(jj)>u_x(1)&&frozen_index(jj)<u_x(end)
-%             u_x_frozen_index1=[u_x_frozen_index1,frozen_index(jj)];
-%          end
-%     end
-%     
-% end
+
         
             
 for j=1:experimentnumber
