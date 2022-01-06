@@ -127,21 +127,7 @@ end
             
 for j=1:experimentnumber
 signal=randi([0 1],1,Se);%生成1*S的0、1随机的矩阵,信息比特
-% % x_outer(1,real_info_index)=signal;
-% % for kk=1:M
-% %     x_p=0;
-% %     for kkk=((kk-1)*(p_index(1)-1)+1):kk*(p_index(1)-1)
-% %       x_p=signal(kkk)+x_p;
-% %     end
-% %     x_outer(p_index(kk))=mod(x_p,2);%计算2-M个校验比特的值，为两个校验比特之间的信息比特之和,即校验前一段
-% % end
-% for kk=1:M
-%     x_p=0;
-%     for kkk=1:(p_index(1)-1+(kk-1)*(p_index(1)-1))
-%          x_p=signal(kkk)+x_p;
-%     end 
-%     x_outer(p_index(kk))=mod(x_p,2);%计算1-M个校验比特的值，检验值为第一位到校验位前一位之和，不包括校验位
-% end
+
 u(1,frozen_index)=0;
 u(1,u_info_index)=signal;
 %计算校验方程以及校验比特
