@@ -158,23 +158,7 @@ for iii=1:M
    end
    u(1,u_frozen_index(iii))=mod(x_p,2);
 end
-% for kk=1:M 
-%     x_p=0;
-%     k=1;
-%       if kk==1
-%           for kkk=1:u_x_frozen_index(1)-1
-%               x_p=u(u_x(kkk))+x_p;
-%               c{kk}(kkk)=find(u_info_index==u_x(kkk));
-%           end
-%       else
-%     for kkk=u_x_frozen_index(kk-1)+1:u_x_frozen_index(kk)-1
-%       x_p=u(u_x(kkk))+x_p;
-%       c{kk}(k)=find(u_info_index==u_x(kkk));
-%       k=k+1;
-%     end
-%       end
-%    u(u_frozen_index(kk))=mod(x_p,2);%计算2-M个校验比特的值，为两个校验比特之间的信息比特之和,即校验前一段
-% end
+
  x= polar_encoder( u,lambda_offset,llr_layer_vec );%编码，不含置换
   x=x';
 s=1-2*x; %BPSK调制
