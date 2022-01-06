@@ -174,11 +174,6 @@ frozen_bits(1,u_signal_index)=3;%较不可靠信息位，SCL译码并奇偶校验
 [polar_info_esti,u_all,active_length] = SCL_decoder(llr, L, S, frozen_bits,  lambda_offset, llr_layer_vec, bit_layer_vec,c_check_real,M);
 
 
-% for vv=1:S-M
-%     real_info_index(vv)=find(signal_index==u_info_index(vv));
-%    
-% end
-% polar_info_esti1=polar_info_esti(real_info_index);
 errbits=length(find(polar_info_esti'~=signal));
 if errbits~=0
             errblock=1;
